@@ -17,6 +17,19 @@ const config = {
   output: {
     path: Path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: Path.resolve(__dirname, '../node_modules'),
+        use: [
+          {
+            loader: 'babel-loader'  
+          }
+        ]
+      }
+    ]
   }
 }
 
