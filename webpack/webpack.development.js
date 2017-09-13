@@ -7,7 +7,8 @@ const Config = Merge(Common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `${Path.resolve(__dirname, '../dist')}`,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new Webpack.HotModuleReplacementPlugin()
