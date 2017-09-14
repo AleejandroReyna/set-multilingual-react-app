@@ -15,6 +15,10 @@ const Routes = [
   {
     path: "/page",
     component: Page
+  },,
+  {
+    path: "/pagina",
+    component: Page
   },
   {
     path: '/nested',
@@ -22,7 +26,16 @@ const Routes = [
     exact: true
   },
   {
+    path: '/anidado',
+    component: Nested,
+    exact: true
+  },
+  {
     path: '/nested/:id',
+    component: NestedItem
+  },
+  {
+    path: '/anidado/:id',
     component: NestedItem
   },
   {

@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import {languageHelper} from '../../helpers'
 
-class noMatch extends Component {
-  render() {
-    return(
-      <div><h1>No route from this search</h1></div>
-    )
-  }
-}
+const noMatch = (props) => (
+  <div><h1>{languageHelper('No hay rutas con esta búsqueda','No route from this search', props.language)}</h1></div>
+)
 
-export default noMatch
+const MSTP = (state) => ({
+  language: state.language
+})
+
+export default connect(MSTP, null)(noMatch)

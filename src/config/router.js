@@ -10,6 +10,9 @@ import {
 } from 'react-router-dom'
 
 class Router extends Component {
+  componentWillMount() {
+    console.log('router mounted')
+  }
   render() {
     const {type} = this.props
     return (
