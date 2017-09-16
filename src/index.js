@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Router from './config/router'
 import Provider, {store} from './config/provider'
-import {setLanguage} from './actions'
+import {setLocalLanguage} from './actions'
 import Header from './components/header'
 import './index.sass'
 
@@ -13,7 +13,7 @@ class App extends Component {
     if(!localStorage.language) {
       localStorage.language = window.navigator.language||navigator.browserLanguage;
     }
-    store.dispatch(setLanguage(localStorage.language));
+    store.dispatch(setLocalLanguage(localStorage.language));
   }
   render() {
     return(

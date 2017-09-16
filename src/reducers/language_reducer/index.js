@@ -1,4 +1,4 @@
-import {SET_LANGUAGE, setLanguage} from '../../actions'
+import {SET_LANGUAGE} from '../../actions'
 
 export default function Language(state = "", action) {
   switch(action.type) {

@@ -1,7 +1,6 @@
-import {SET_LANGUAGE, setLanguage, setLocalLanguage} from './language'
+import {SET_LANGUAGE, setLocalLanguage} from './language'
 
 export {
   SET_LANGUAGE,
-  setLocalLanguage,
-  setLanguage
+  setLocalLanguage
 }
