@@ -4,6 +4,7 @@ import Router from './config/router'
 import Provider, {store} from './config/provider'
 import {setLanguage} from './actions'
 import Header from './components/header'
+import './index.sass'
 
 store.subscribe(() => {console.log(store.getState())})
 

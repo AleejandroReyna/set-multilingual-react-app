@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Routes from './routes'
+import Layout from '../components/layout'
 import {
   HashRouter,
   // if required BrowserRouter,
@@ -19,27 +20,29 @@ class Router extends Component {
       <HashRouter>
         <div>
           {this.props.children}
-          <Switch>
-          {
-            Routes.map((route, index) => {
-              if(route.path) {
-                if(route.exact) {
-                  return(
-                    <Route exact key={index} path={route.path} component={route.component}/>
-                  )
+          <Layout>
+            <Switch>
+            {
+              Routes.map((route, index) => {
+                if(route.path) {
+                  if(route.exact) {
+                    return(
+                      <Route exact key={index} path={route.path} component={route.component}/>
+                    )
+                  } else {
+                    return(
+                      <Route key={index} path={route.path} component={route.component}/>
+                    )
+                  }
                 } else {
                   return(
-                    <Route key={index} path={route.path} component={route.component}/>
+                    <Route key={index} component={route.component}/>
                   )
                 }
-              } else {
-                return(
-                  <Route key={index} component={route.component}/>
-                )
-              }
-            })
-          }
-          </Switch>
+              })
+            }
+            </Switch>
+          </Layout>
         </div>
       </HashRouter>     
     )

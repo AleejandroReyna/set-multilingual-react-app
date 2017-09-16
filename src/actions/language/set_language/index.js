@@ -6,3 +6,10 @@ export const setLanguage = language =>  (
     language
   }
 )
+
+export const setLocalLanguage = (language) => {
+  localStorage.setItem("language", language)
+  return (dispatch, getState) => {
+    dispatch(setLanguage(language))
+  }
+}
