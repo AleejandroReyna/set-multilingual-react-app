@@ -1,80 +1,82 @@
-header
+.main-header
   background: #04151F
   width: 100%
   display: flex
   justify-content: space-between
   align-items: center
 
-.logo
-  display: block
-  padding: 0 20px
-  color: #fff
-  text:
-    decoration: none
+  nav
+    display: flex
+    justify-content: center
+    padding: 0 20px
 
-nav
-  display: flex
-  justify-content: center
-  padding: 0 20px
+  button
+    appearance: none
+    color: #fff
+    background: none
+    padding: 10px 20px
+    border: 2px solid #fff
+      radius: 5px
+    outline: none
+    cursor: pointer
+    margin:
+      left: 20px
+    font:
+      size: 15px
+        
+  .logo
+    display: block
+    padding: 0 20px
+    color: #fff
+    outline: none
+    text:
+      decoration: none
 
-button
-  appearance: none
-  color: #fff
-  background: none
-  padding: 10px 20px
-  border: 2px solid #fff
-    radius: 5px
-  outline: none
-  cursor: pointer
-  margin:
-    left: 20px
-  font:
-    size: 15px
-
-.list
-  display: flex
-  width: 100%
-  align:
-    items: center
-  list:
-    style:
-      type: none
-
-  ul
-    display: none
-    width: 160px
-    position: absolute
-    left: 0
-    top: 100%
-    padding: 5px 0 0
+  .list
+    display: flex
+    width: 100%
+    align:
+      items: center
     list:
       style:
         type: none
 
-    > li
-      background: #04151F
+    ul
+      display: none
+      width: 160px
+      position: absolute
+      left: 0
+      top: 100%
+      padding: 5px 0 0
+      list:
+        style:
+          type: none
 
-      > a
-        padding: 15px 10px
+      > li
+        background: #04151F
+
+        > a
+          padding: 15px 10px
 
 
-  > li 
-    position: relative
+    > li 
+      position: relative
 
-    &:hover
-      ul
-        display: block
+      &:hover
+        ul
+          display: block
 
-  a
-    padding: 25px 15px
-    color: #fff
-    display: block
-    transition: background .2s
-    font:
-      size: 15px
-    text:
-      decoration: none
+    a
+      padding: 25px 15px
+      color: #fff
+      display: block
+      transition: background .2s
+      cursor: pointer
+      font:
+        size: 15px
+      text:
+        decoration: none
 
-    &.active,
-    &:hover
-      background: #183A37
+      &.active,
+      &:hover
+        background: #183A37

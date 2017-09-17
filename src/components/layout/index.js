@@ -1,10 +1,11 @@
 import React from 'react'
-import './index.sass'
+import cssModules from 'react-css-modules'
+import Style from './index.sass'
 
 const Layout = (props) => (
-  <div className="layout">
+  <div styleName="layout">
     {props.children}
   </div>
 )
 
-export default Layout
+export default cssModules(Layout, Style)

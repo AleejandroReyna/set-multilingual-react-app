@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import {NavLink, withRouter, Link} from 'react-router-dom'
 import {setLocalLanguage} from '../../actions'
 import {languageHelper} from '../../helpers'
-import './index.sass'
+import cssModules from 'react-css-modules'
+import Style from './index.sass'
 
 class Header extends Component {
   constructor() {
@@ -21,12 +22,12 @@ class Header extends Component {
   render() {
     const {language} = this.props
     return(
-      <header>
-        <Link to="/" className="logo">
+      <header styleName="main-header">
+        <Link to="/" styleName="logo">
           <h2>Multilingual React App</h2>
         </Link> 
         <nav>
-          <ul className="list">
+          <ul styleName="list">
             <li><NavLink exact activeClassName="active" to="/">{languageHelper("Inicio", "Home", language)}</NavLink></li>
             <li><NavLink exact activeClassName="active" to={ "/" + languageHelper("pagina", "page", language)} >{languageHelper("Página", "Page", language)}</NavLink></li>
             <li>
@@ -61,4 +62,4 @@ const PSTP = (state) => (
 
 const MDTP = dispatch => bindActionCreators({setLocalLanguage}, dispatch);
 
-export default withRouter(connect(PSTP,MDTP)(Header))
+export default withRouter(connect(PSTP,MDTP)(cssModules(Header, Style)))

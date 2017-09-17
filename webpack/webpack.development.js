@@ -10,6 +10,39 @@ const Config = Merge(Common, {
     hot: true,
     historyApiFallback: true
   },
+  module: {
+    rules: [
+      {
+        test: /\.(css|scss|sass)$/,
+        exclude: Path.resolve(__dirname, '../node_modules'),
+        use: [
+          "style-loader",
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ctx: {
+                autoprefixer: {}
+              },
+              plugins: [
+                require('autoprefixer')()
+              ]
+            }
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.DefinePlugin({
