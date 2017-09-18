@@ -11,6 +11,7 @@ const config = {
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
       title: 'Multilingual React App',
+      favicon: './src/react.png',
       template: `${Path.resolve(__dirname, '../src/templates')}/index.html`
     })
   ],
@@ -28,6 +29,12 @@ const config = {
             loader: 'babel-loader'  
           }
         ]
+      },
+      { 
+        test: /\.png$/, 
+        use: [
+          'file-loader'
+        ] 
       }
     ]
   }

@@ -28,18 +28,18 @@ class Header extends Component {
         </Link> 
         <nav>
           <ul styleName="list">
-            <li><NavLink exact activeClassName="active" to="/">{languageHelper("Inicio", "Home", language)}</NavLink></li>
-            <li><NavLink exact activeClassName="active" to={ "/" + languageHelper("pagina", "page", language)} >{languageHelper("Página", "Page", language)}</NavLink></li>
+            <li><NavLink exact activeClassName={this.props.styles.active} to="/">{languageHelper("Inicio", "Home", language)}</NavLink></li>
+            <li><NavLink exact activeClassName={this.props.styles.active} to={ "/" + languageHelper("pagina", "page", language)} >{languageHelper("Página", "Page", language)}</NavLink></li>
             <li>
-              <NavLink to={ "/" + languageHelper("anidado", "nested", language)}>{languageHelper("Anidado", "Nested", language)}</NavLink>
+              <NavLink activeClassName={this.props.styles.active} to={ "/" + languageHelper("anidado", "nested", language)}>{languageHelper("Anidado", "Nested", language)}</NavLink>
               <ul>
-                <li><NavLink exact activeClassName="active" to={ "/" + languageHelper("anidado", "nested", language) + "/1"}>{languageHelper("Anidado", "Nested", language)} #01</NavLink></li>
-                <li><NavLink exact activeClassName="active" to={ "/" + languageHelper("anidado", "nested", language) + "/2"}>{languageHelper("Anidado", "Nested", language)} #02</NavLink></li>
-                <li><NavLink exact activeClassName="active" to={ "/" + languageHelper("anidado", "nested", language) + "/3"}>{languageHelper("Anidado", "Nested", language)} #03</NavLink></li>
+                <li><NavLink exact activeClassName={this.props.styles.active} to={ "/" + languageHelper("anidado", "nested", language) + "/1"}>{languageHelper("Anidado", "Nested", language)} #01</NavLink></li>
+                <li><NavLink exact activeClassName={this.props.styles.active} to={ "/" + languageHelper("anidado", "nested", language) + "/2"}>{languageHelper("Anidado", "Nested", language)} #02</NavLink></li>
+                <li><NavLink exact activeClassName={this.props.styles.active} to={ "/" + languageHelper("anidado", "nested", language) + "/3"}>{languageHelper("Anidado", "Nested", language)} #03</NavLink></li>
               </ul>
             </li>
-            <li><NavLink exact activeClassName="active" to={languageHelper("/ruta-no-definida", "/route-not-defined", language)}>{languageHelper("Ruta no definida", "Route not defined", language)}</NavLink></li>
-            <li><NavLink exact activeClassName="active" to={languageHelper("/subrutas/no/definidas", "/subroutes/not/defined", language)}>{languageHelper("Ruta con subrutas no definidas", "Route with subroutes not defined", language)}</NavLink></li>
+            <li><NavLink exact activeClassName={this.props.styles.active} to={languageHelper("/ruta-no-definida", "/route-not-defined", language)}>{languageHelper("Ruta no definida", "Route not defined", language)}</NavLink></li>
+            <li><NavLink exact activeClassName={this.props.styles.active} to={languageHelper("/subrutas/no/definidas", "/subroutes/not/defined", language)}>{languageHelper("Ruta con subrutas no definidas", "Route with subroutes not defined", language)}</NavLink></li>
             <li>
               {language === "es" ?
                 <button onClick={() => {this.props.setLocalLanguage('en')}}>English</button>
